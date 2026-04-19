@@ -3,7 +3,7 @@ import RevealText from '../components/RevealText';
 import AnimatedCounter from '../components/AnimatedCounter';
 
 const stats = [
-  { number: 5, suffix: '.0 ⭐', label: 'Rating en Google' },
+  { number: 5, suffix: '.0', label: 'Rating en Google' },
   { number: 1161, suffix: '+', label: 'Seguidores Instagram' },
   { number: 7, suffix: ' días', label: 'Abierto toda la semana' },
 ];
@@ -51,8 +51,8 @@ export default function ExperienceSection() {
             transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
           >
             <img
-              src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=700&q=85"
-              alt="Terraza Bar Paseo de Las Palmas"
+              src="/images/coct.jpeg"
+              alt="Cócteles artesanales en Terraza Bar"
             />
           </motion.div>
         </div>

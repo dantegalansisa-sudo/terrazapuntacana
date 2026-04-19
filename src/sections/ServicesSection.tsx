@@ -1,34 +1,35 @@
 import { motion } from 'framer-motion';
 import RevealText from '../components/RevealText';
+import { CocktailIcon, CarIcon, HeadphonesIcon, MicIcon } from '../components/Icons';
 
 const services = [
   {
-    icon: '🍹',
+    icon: <CocktailIcon size={26} />,
     title: 'Terraza Bar',
     desc: 'Cócteles artesanales, bebidas nacionales e internacionales. Asientos en terraza con la mejor vibra de Punta Cana.',
     features: ['Cócteles Premium', 'Bebidas Nacionales', 'Ambiente Exclusivo'],
-    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80',
+    image: '/images/contel.jpeg',
   },
   {
-    icon: '🚗',
+    icon: <CarIcon size={26} />,
     title: 'Car Wash',
     desc: 'Lava tu carro mientras disfrutas de la terraza. Servicio profesional de lavado y detailing.',
     features: ['Lavado Exterior', 'Detailing Interior', 'Aspirado Incluido'],
-    image: 'https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=600&q=80',
+    image: '/images/carww.jpeg',
   },
   {
-    icon: '🎧',
+    icon: <HeadphonesIcon size={26} />,
     title: 'DJ en Vivo',
     desc: 'Los mejores DJs de la región animan tu noche con lo mejor de la música electrónica, salsa y reggaetón.',
     features: ['DJs Residentes', 'Música en Vivo', 'Noches Temáticas'],
-    image: 'https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=600&q=80',
+    image: '/images/dj.png',
   },
   {
-    icon: '🎤',
+    icon: <MicIcon size={26} />,
     title: 'Karaoke',
     desc: 'Noches de karaoke donde tú eres la estrella. Amplio repertorio en español e inglés.',
     features: ['Sábados de Karaoke', 'Repertorio Amplio', 'Premios Especiales'],
-    image: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600&q=80',
+    image: '/images/karahoke.png',
   },
 ];
 

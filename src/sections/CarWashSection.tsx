@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
 import RevealText from '../components/RevealText';
 import MagneticButton from '../components/MagneticButton';
+import { CarIcon, WindIcon, SparklesIcon, DropletIcon } from '../components/Icons';
 
 const carWashServices = [
-  { icon: '🚗', title: 'Lavado Exterior', desc: 'Lavado completo a presión' },
-  { icon: '🧹', title: 'Aspirado Interior', desc: 'Limpieza profunda interior' },
-  { icon: '✨', title: 'Detailing', desc: 'Acabado brillante premium' },
-  { icon: '🪟', title: 'Vidrios', desc: 'Cristales impecables' },
+  { icon: <CarIcon size={22} />, title: 'Lavado Exterior', desc: 'Lavado completo a presión' },
+  { icon: <WindIcon size={22} />, title: 'Aspirado Interior', desc: 'Limpieza profunda interior' },
+  { icon: <SparklesIcon size={22} />, title: 'Detailing', desc: 'Acabado brillante premium' },
+  { icon: <DropletIcon size={22} />, title: 'Vidrios', desc: 'Cristales impecables' },
 ];
 
 const containerVariants = {
@@ -50,8 +51,8 @@ export default function CarWashSection() {
             transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
           >
             <img
-              src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=700&q=85"
-              alt="Car Wash profesional"
+              src="/images/carw.jpeg"
+              alt="Car Wash profesional — Jeep Rubicon"
             />
           </motion.div>
 

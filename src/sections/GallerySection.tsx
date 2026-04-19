@@ -2,12 +2,12 @@ import { motion } from 'framer-motion';
 import RevealText from '../components/RevealText';
 
 const galleryImages = [
-  { src: 'https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=600&q=80', alt: 'Terraza bar de noche' },
-  { src: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=80', alt: 'Bar nocturno' },
-  { src: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80', alt: 'Cócteles artesanales' },
-  { src: 'https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=600&q=80', alt: 'DJ en vivo' },
-  { src: 'https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=600&q=80', alt: 'Car wash profesional' },
-  { src: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600&q=80', alt: 'Noche de karaoke' },
+  { src: '/images/heros.png', alt: 'Terraza Bar exterior' },
+  { src: '/images/contel.jpeg', alt: 'Cócteles artesanales' },
+  { src: '/images/Screenshot 2026-04-19 171726.png', alt: 'Karaoke en vivo' },
+  { src: '/images/carww.jpeg', alt: 'Car wash Porsche' },
+  { src: '/images/coct.jpeg', alt: 'Cócteles tropicales' },
+  { src: '/images/Screenshot 2026-04-19 171749.png', alt: 'Noche de karaoke' },
 ];
 
 const containerVariants = {
@@ -51,7 +51,7 @@ export default function GallerySection() {
           {galleryImages.map((img, i) => (
             <motion.div key={i} className="gallery-item" variants={itemVariants}>
               <img src={img.src} alt={img.alt} />
-              <div className="gallery-overlay">🔍</div>
+              <div className="gallery-overlay" />
             </motion.div>
           ))}
         </motion.div>

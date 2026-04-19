@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import RevealText from '../components/RevealText';
+import { MapPinIcon, PhoneIcon, ClockIcon, InstagramIcon, StarIcon } from '../components/Icons';
 
 const chips = [
   'Asientos en terraza',
@@ -43,7 +44,9 @@ export default function LocationSection() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.76, 0, 0.24, 1] }}
           >
             <div className="loc-item">
-              <div className="loc-item__icon">📍</div>
+              <div className="loc-item__icon">
+                <MapPinIcon size={22} color="var(--orange)" />
+              </div>
               <div className="loc-item__text">
                 <h4>Dirección</h4>
                 <p>Calle Feliz Sánchez, Camino Ciudad La Palma, Punta Cana 23302</p>
@@ -51,7 +54,9 @@ export default function LocationSection() {
             </div>
 
             <div className="loc-item">
-              <div className="loc-item__icon">📞</div>
+              <div className="loc-item__icon">
+                <PhoneIcon size={22} color="var(--orange)" />
+              </div>
               <div className="loc-item__text">
                 <h4>Teléfono</h4>
                 <p><a href="tel:8097788888">(809) 778-8888</a></p>
@@ -59,7 +64,9 @@ export default function LocationSection() {
             </div>
 
             <div className="loc-item">
-              <div className="loc-item__icon">🕐</div>
+              <div className="loc-item__icon">
+                <ClockIcon size={22} color="var(--orange)" />
+              </div>
               <div className="loc-item__text">
                 <h4>Horario</h4>
                 <p>Todos los días hasta las 12:00 AM</p>
@@ -67,7 +74,9 @@ export default function LocationSection() {
             </div>
 
             <div className="loc-item">
-              <div className="loc-item__icon">📸</div>
+              <div className="loc-item__icon">
+                <InstagramIcon size={22} color="var(--orange)" />
+              </div>
               <div className="loc-item__text">
                 <h4>Instagram</h4>
                 <p>
@@ -83,10 +92,12 @@ export default function LocationSection() {
             </div>
 
             <div className="loc-item">
-              <div className="loc-item__icon">⭐</div>
+              <div className="loc-item__icon">
+                <StarIcon size={22} color="var(--orange)" />
+              </div>
               <div className="loc-item__text">
                 <h4>Rating</h4>
-                <p>5.0 ⭐ en Google</p>
+                <p>5.0 en Google</p>
               </div>
             </div>
 

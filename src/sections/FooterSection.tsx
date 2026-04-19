@@ -1,9 +1,10 @@
+import { InstagramIcon, WhatsAppIcon, PhoneIcon } from '../components/Icons';
+
 export default function FooterSection() {
   return (
     <footer className="footer">
       <div className="section-container">
         <div className="footer__grid">
-          {/* Brand */}
           <div>
             <img
               className="footer__brand-logo"
@@ -23,7 +24,7 @@ export default function FooterSection() {
                 rel="noopener noreferrer"
                 aria-label="Instagram"
               >
-                📸
+                <InstagramIcon size={18} />
               </a>
               <a
                 className="footer__social-link"
@@ -32,19 +33,18 @@ export default function FooterSection() {
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
               >
-                💬
+                <WhatsAppIcon size={18} />
               </a>
               <a
                 className="footer__social-link"
                 href="tel:8097788888"
                 aria-label="Teléfono"
               >
-                📞
+                <PhoneIcon size={18} />
               </a>
             </div>
           </div>
 
-          {/* Servicios */}
           <div>
             <h4 className="footer__col-title">Servicios</h4>
             <ul className="footer__col-links">
@@ -55,7 +55,6 @@ export default function FooterSection() {
             </ul>
           </div>
 
-          {/* Contacto */}
           <div>
             <h4 className="footer__col-title">Contacto</h4>
             <ul className="footer__col-links">
@@ -65,7 +64,6 @@ export default function FooterSection() {
             </ul>
           </div>
 
-          {/* Horario */}
           <div>
             <h4 className="footer__col-title">Horario</h4>
             <ul className="footer__col-links">

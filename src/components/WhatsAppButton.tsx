@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { WhatsAppIcon } from './Icons';
 
 export default function WhatsAppButton() {
   return (
@@ -13,7 +14,7 @@ export default function WhatsAppButton() {
       transition={{ delay: 2, type: 'spring', stiffness: 200 }}
       whileHover={{ scale: 1.1 }}
     >
-      💬
+      <WhatsAppIcon size={28} color="white" />
     </motion.a>
   );
 }
