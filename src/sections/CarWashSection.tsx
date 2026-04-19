@@ -87,7 +87,7 @@ export default function CarWashSection() {
 
             <MagneticButton
               className="btn-outline"
-              href="https://wa.me/18097788888?text=Hola%2C%20quiero%20consultar%20precios%20del%20Car%20Wash"
+              href="https://wa.me/18097788888?text=Hola%2C%20vengo%20desde%20su%20p%C3%A1gina%20web%20terrazapuntacana.vercel.app%20y%20quiero%20consultar%20precios%20del%20Car%20Wash.%20%C2%A1Gracias!"
             >
               Consultar Precios →
             </MagneticButton>
