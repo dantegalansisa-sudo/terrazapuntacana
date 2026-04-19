@@ -2,11 +2,14 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import MagneticButton from '../components/MagneticButton';
 import { ClockIcon, MapPinIcon, StarIcon, PhoneIcon } from '../components/Icons';
 
-const floatingPhotos = [
-  { src: '/images/karaoke-live-1.png', alt: 'Karaoke en vivo', className: 'hero__photo--1' },
-  { src: '/images/contel.jpeg', alt: 'Cócteles artesanales', className: 'hero__photo--2' },
-  { src: '/images/karaoke-live-2.png', alt: 'Noche de karaoke', className: 'hero__photo--3' },
-  { src: '/images/carww.jpeg', alt: 'Car Wash premium', className: 'hero__photo--4' },
+const clientPhotos = [
+  { src: '/images/clients-1.png', alt: 'Clientes disfrutando' },
+  { src: '/images/clients-2.png', alt: 'Motos en Terraza Bar' },
+  { src: '/images/clients-3.png', alt: 'Música en vivo' },
+  { src: '/images/clients-4.png', alt: 'Amigos en la terraza' },
+  { src: '/images/clients-5.png', alt: 'Terraza de día' },
+  { src: '/images/clients-6.png', alt: 'Evento especial' },
+  { src: '/images/clients-7.png', alt: 'Car Wash de noche' },
 ];
 
 export default function HeroSection() {
@@ -121,33 +124,30 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* RIGHT — Floating photos collage */}
-        <div className="hero__photos">
-          {floatingPhotos.map((photo, i) => (
-            <motion.div
-              key={i}
-              className={`hero__photo ${photo.className}`}
-              initial={{ opacity: 0, y: 60, scale: 0.8 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{
-                delay: 1.0 + i * 0.2,
-                duration: 0.8,
-                ease: [0.76, 0, 0.24, 1],
-              }}
-            >
-              <motion.img
-                src={photo.src}
-                alt={photo.alt}
-                animate={{ y: [0, i % 2 === 0 ? -8 : 8, 0] }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 3 + i * 0.5,
-                  ease: 'easeInOut',
-                }}
-              />
-            </motion.div>
-          ))}
-        </div>
+        {/* RIGHT — Vertical scrolling photo marquee */}
+        <motion.div
+          className="hero__photos"
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.8, duration: 1, ease: [0.76, 0, 0.24, 1] }}
+        >
+          <div className="hero__marquee">
+            <div className="hero__marquee-track">
+              {/* Original set */}
+              {clientPhotos.map((photo, i) => (
+                <div key={`a-${i}`} className="hero__photo">
+                  <img src={photo.src} alt={photo.alt} />
+                </div>
+              ))}
+              {/* Duplicate for seamless loop */}
+              {clientPhotos.map((photo, i) => (
+                <div key={`b-${i}`} className="hero__photo">
+                  <img src={photo.src} alt={photo.alt} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </motion.div>
 
       <motion.div
