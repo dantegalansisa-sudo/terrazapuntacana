@@ -136,9 +136,9 @@ a {
 /* ========== TYPOGRAPHY ========== */
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(72px, 12vw, 180px);
+  font-size: clamp(48px, 7vw, 100px);
   font-weight: 400;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   line-height: 0.95;
   color: var(--text-white);
   display: block;
@@ -375,8 +375,7 @@ a {
   position: relative;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
-  padding-bottom: 80px;
+  align-items: center;
   background: var(--bg-night);
 }
 .hero__bg {
@@ -394,78 +393,51 @@ a {
   inset: 0;
   background: var(--gradient-hero);
 }
-.hero__bokeh {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-.bokeh {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.15;
-  pointer-events: none;
-  animation: float-bokeh 8s ease-in-out infinite;
-}
-.bokeh--1 {
-  width: 300px; height: 300px;
-  background: var(--orange);
-  top: 20%; right: 15%;
-  animation-delay: 0s;
-}
-.bokeh--2 {
-  width: 200px; height: 200px;
-  background: var(--gold);
-  top: 60%; right: 30%;
-  animation-delay: 3s;
-}
-.bokeh--3 {
-  width: 250px; height: 250px;
-  background: var(--green-light);
-  top: 40%; left: 10%;
-  animation-delay: 6s;
-}
-@keyframes float-bokeh {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(20px, -20px) scale(1.1); }
-  66% { transform: translate(-15px, 15px) scale(0.95); }
-}
-.hero__content {
+.hero__split {
   position: relative;
   z-index: 3;
-  padding-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+.hero__left {
+  display: flex;
+  flex-direction: column;
 }
 .hero-title--accent {
   color: var(--orange-bright);
   text-shadow: 0 4px 40px rgba(232,100,10,0.3);
-  font-size: clamp(80px, 14vw, 200px);
+  font-size: clamp(52px, 8vw, 110px);
 }
 .hero-title--sub {
   font-family: var(--font-serif);
-  font-size: clamp(20px, 2.5vw, 32px);
+  font-size: clamp(17px, 2vw, 24px);
   font-weight: 400;
   font-style: italic;
-  letter-spacing: 1px;
-  line-height: 1.4;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
   text-transform: none;
   color: rgba(255,250,244,0.85);
-  margin-top: 20px;
+  margin-top: 16px;
   text-shadow: 0 2px 20px rgba(0,0,0,0.3);
 }
 .hero__line {
   height: 2px;
+  width: 80px;
   background: var(--gradient-orange);
-  margin: 32px 0;
+  margin: 24px 0;
   border-radius: 2px;
 }
 .hero__subtitle {
   font-family: var(--font-mono);
-  font-size: 13px;
-  letter-spacing: 4px;
+  font-size: 11px;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  color: rgba(255,250,244,0.6);
-  margin-bottom: 40px;
+  color: rgba(255,250,244,0.55);
+  margin-bottom: 28px;
 }
 .hero__actions {
   display: flex;
@@ -475,17 +447,17 @@ a {
 .hero__info {
   display: flex;
   align-items: center;
-  gap: 24px;
-  margin-top: 48px;
-  padding-top: 32px;
-  border-top: 1px solid rgba(255,250,244,0.15);
+  gap: 20px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,250,244,0.12);
 }
 .info-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: rgba(255,250,244,0.75);
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(255,250,244,0.7);
   font-family: var(--font-sans);
 }
 .info-item svg {
@@ -494,9 +466,63 @@ a {
 }
 .info-sep {
   width: 1px;
-  height: 20px;
+  height: 16px;
   background: rgba(255,250,244,0.2);
 }
+
+/* Hero floating photos */
+.hero__photos {
+  position: relative;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero__photo {
+  position: absolute;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  border: 3px solid rgba(255,250,244,0.15);
+}
+.hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero__photo--1 {
+  width: 220px;
+  height: 300px;
+  top: 10%;
+  left: 5%;
+  z-index: 3;
+  transform: rotate(-4deg);
+}
+.hero__photo--2 {
+  width: 200px;
+  height: 280px;
+  top: 5%;
+  right: 10%;
+  z-index: 2;
+  transform: rotate(3deg);
+}
+.hero__photo--3 {
+  width: 190px;
+  height: 260px;
+  bottom: 5%;
+  left: 25%;
+  z-index: 4;
+  transform: rotate(2deg);
+}
+.hero__photo--4 {
+  width: 180px;
+  height: 250px;
+  bottom: 10%;
+  right: 5%;
+  z-index: 1;
+  transform: rotate(-3deg);
+}
+
 .hero__scroll {
   position: absolute;
   right: 64px;
@@ -511,6 +537,22 @@ a {
   width: 1px;
   height: 50px;
   background: linear-gradient(to bottom, var(--gold), transparent);
+}
+
+@media (max-width: 768px) {
+  .hero__split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+  .hero__photos {
+    height: 320px;
+  }
+  .hero__photo--1 { width: 140px; height: 200px; left: 0; }
+  .hero__photo--2 { width: 130px; height: 180px; right: 0; }
+  .hero__photo--3 { width: 120px; height: 170px; left: 15%; }
+  .hero__photo--4 { width: 120px; height: 160px; right: 0; }
 }
 
 /* ========== EXPERIENCE SECTION ========== */
@@ -565,7 +607,7 @@ a {
 }
 .experience__image img {
   width: 100%;
-  height: 500px;
+  aspect-ratio: 3/4;
   object-fit: cover;
 }
 
@@ -595,11 +637,11 @@ a {
 }
 .service-card__img-wrap {
   overflow: hidden;
-  height: 220px;
+  aspect-ratio: 4/3;
 }
 .service-card__img {
   width: 100%;
-  height: 220px;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.5s;
 }
@@ -659,8 +701,8 @@ a {
 }
 .gallery-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1.2fr;
-  grid-template-rows: 280px 280px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 320px;
   gap: 12px;
   margin-top: 64px;
 }
@@ -722,11 +764,11 @@ a {
 }
 .event-card__img-wrap {
   overflow: hidden;
-  height: 200px;
+  aspect-ratio: 3/4;
 }
 .event-card__img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.5s;
 }
@@ -805,7 +847,7 @@ a {
 }
 .carwash__image img {
   width: 100%;
-  height: 480px;
+  aspect-ratio: 3/4;
   object-fit: cover;
 }
 .carwash__info {
@@ -1067,7 +1109,7 @@ a {
     grid-row: auto;
   }
   .gallery-item {
-    height: 200px;
+    height: 260px;
   }
   .hero__scroll {
     display: none;

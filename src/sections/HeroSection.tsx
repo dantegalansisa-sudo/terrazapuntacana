@@ -2,6 +2,13 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import MagneticButton from '../components/MagneticButton';
 import { ClockIcon, MapPinIcon, StarIcon, PhoneIcon } from '../components/Icons';
 
+const floatingPhotos = [
+  { src: '/images/karaoke-live-1.png', alt: 'Karaoke en vivo', className: 'hero__photo--1' },
+  { src: '/images/contel.jpeg', alt: 'Cócteles artesanales', className: 'hero__photo--2' },
+  { src: '/images/karaoke-live-2.png', alt: 'Noche de karaoke', className: 'hero__photo--3' },
+  { src: '/images/carww.jpeg', alt: 'Car Wash premium', className: 'hero__photo--4' },
+];
+
 export default function HeroSection() {
   const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 0.3], [1, 1.1]);
@@ -23,93 +30,124 @@ export default function HeroSection() {
         <div className="bokeh bokeh--3" />
       </div>
 
-      <motion.div className="hero__content section-container" style={{ opacity }}>
-        <motion.span
-          className="label-tag"
-          style={{ color: 'var(--gold)', marginBottom: 28, display: 'block' }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-        >
-          Punta Cana · República Dominicana
-        </motion.span>
+      <motion.div className="hero__split section-container" style={{ opacity }}>
+        {/* LEFT — Text content */}
+        <div className="hero__left">
+          <motion.span
+            className="label-tag"
+            style={{ color: 'var(--gold)', marginBottom: 28, display: 'block' }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+          >
+            Punta Cana · República Dominicana
+          </motion.span>
 
-        <motion.h1
-          className="hero-title"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-        >
-          Terraza Bar
-        </motion.h1>
-        <motion.h1
-          className="hero-title hero-title--accent"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-        >
-          & Car Wash
-        </motion.h1>
-        <motion.p
-          className="hero-title hero-title--sub"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9, duration: 0.6 }}
-        >
-          Lava tu carro, disfruta el momento — lo tenemos todo en un solo lugar
-        </motion.p>
+          <motion.h1
+            className="hero-title"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+          >
+            Terraza Bar
+          </motion.h1>
+          <motion.h1
+            className="hero-title hero-title--accent"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+          >
+            & Car Wash
+          </motion.h1>
+          <motion.p
+            className="hero-title hero-title--sub"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.6 }}
+          >
+            Lava tu carro, disfruta el momento — lo tenemos todo en un solo lugar
+          </motion.p>
 
-        <motion.div
-          className="hero__line"
-          initial={{ width: 0 }}
-          animate={{ width: 120 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-        />
+          <motion.div
+            className="hero__line"
+            initial={{ width: 0 }}
+            animate={{ width: 120 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+          />
 
-        <motion.p
-          className="hero__subtitle"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.3, duration: 0.6 }}
-        >
-          Bar · Car Wash · DJ en Vivo · Karaoke · Cócteles
-        </motion.p>
+          <motion.p
+            className="hero__subtitle"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.3, duration: 0.6 }}
+          >
+            Bar · Car Wash · DJ en Vivo · Karaoke · Cócteles
+          </motion.p>
 
-        <motion.div
-          className="hero__actions"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5, duration: 0.6 }}
-        >
-          <MagneticButton className="btn-orange" href="tel:8097788888">
-            <PhoneIcon size={18} color="white" /> Reservar Mesa
-          </MagneticButton>
-          <MagneticButton className="btn-ghost-white" href="#servicios">
-            Explorar →
-          </MagneticButton>
-        </motion.div>
+          <motion.div
+            className="hero__actions"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.5, duration: 0.6 }}
+          >
+            <MagneticButton className="btn-orange" href="tel:8097788888">
+              <PhoneIcon size={18} color="white" /> Reservar Mesa
+            </MagneticButton>
+            <MagneticButton className="btn-ghost-white" href="#servicios">
+              Explorar →
+            </MagneticButton>
+          </motion.div>
 
-        <motion.div
-          className="hero__info"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.7, duration: 0.6 }}
-        >
-          <div className="info-item">
-            <ClockIcon size={16} color="rgba(255,250,244,0.7)" />
-            <span>Hasta las 12:00 AM</span>
-          </div>
-          <div className="info-sep" />
-          <div className="info-item">
-            <MapPinIcon size={16} color="rgba(255,250,244,0.7)" />
-            <span>Camino Ciudad La Palma, Punta Cana</span>
-          </div>
-          <div className="info-sep" />
-          <div className="info-item">
-            <StarIcon size={16} color="#D4A853" />
-            <span>5.0 en Google</span>
-          </div>
-        </motion.div>
+          <motion.div
+            className="hero__info"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.7, duration: 0.6 }}
+          >
+            <div className="info-item">
+              <ClockIcon size={16} color="rgba(255,250,244,0.7)" />
+              <span>Hasta las 12:00 AM</span>
+            </div>
+            <div className="info-sep" />
+            <div className="info-item">
+              <MapPinIcon size={16} color="rgba(255,250,244,0.7)" />
+              <span>Punta Cana</span>
+            </div>
+            <div className="info-sep" />
+            <div className="info-item">
+              <StarIcon size={16} color="#D4A853" />
+              <span>5.0 en Google</span>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* RIGHT — Floating photos collage */}
+        <div className="hero__photos">
+          {floatingPhotos.map((photo, i) => (
+            <motion.div
+              key={i}
+              className={`hero__photo ${photo.className}`}
+              initial={{ opacity: 0, y: 60, scale: 0.8 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                delay: 1.0 + i * 0.2,
+                duration: 0.8,
+                ease: [0.76, 0, 0.24, 1],
+              }}
+            >
+              <motion.img
+                src={photo.src}
+                alt={photo.alt}
+                animate={{ y: [0, i % 2 === 0 ? -8 : 8, 0] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 3 + i * 0.5,
+                  ease: 'easeInOut',
+                }}
+              />
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
 
       <motion.div
