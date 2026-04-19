@@ -495,7 +495,7 @@ a {
   width: 230px;
   height: 310px;
   top: 5%;
-  left: 0;
+  left: 15%;
   z-index: 3;
   transform: rotate(-5deg);
 }
