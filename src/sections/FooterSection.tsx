@@ -6,11 +6,9 @@ export default function FooterSection() {
       <div className="section-container">
         <div className="footer__grid">
           <div>
-            <img
-              className="footer__brand-logo"
-              src="/images/logo/paseo-logo.png"
-              alt="Terraza Bar Paseo de Las Palmas"
-            />
+            <div className="footer__brand-name">
+              Terraza <span>Bar</span> & Car Wash
+            </div>
             <p className="footer__brand-desc">
               Car Wash · Música · Ambiente · Buena Vibra.
               El lugar donde vienes a relajarte y tu carro

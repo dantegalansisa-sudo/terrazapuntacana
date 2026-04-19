@@ -4,10 +4,10 @@ import RevealText from '../components/RevealText';
 const galleryImages = [
   { src: '/images/heros.png', alt: 'Terraza Bar exterior' },
   { src: '/images/contel.jpeg', alt: 'Cócteles artesanales' },
-  { src: '/images/Screenshot 2026-04-19 171726.png', alt: 'Karaoke en vivo' },
+  { src: '/images/karaoke-live-1.png', alt: 'Karaoke en vivo' },
   { src: '/images/carww.jpeg', alt: 'Car wash Porsche' },
   { src: '/images/coct.jpeg', alt: 'Cócteles tropicales' },
-  { src: '/images/Screenshot 2026-04-19 171749.png', alt: 'Noche de karaoke' },
+  { src: '/images/karaoke-live-2.png', alt: 'Noche de karaoke' },
 ];
 
 const containerVariants = {

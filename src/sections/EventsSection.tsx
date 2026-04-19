@@ -10,7 +10,7 @@ const events = [
     icon: <HeadphonesIcon size={28} />,
     time: 'Desde las 8:00 PM',
     badge: 'Cada Viernes',
-    image: '/images/Screenshot 2026-04-19 171811.png',
+    image: '/images/karaoke-live-3.png',
   },
   {
     day: 'Sábado',

@@ -32,11 +32,9 @@ function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <a href="#">
-        <img
-          className="navbar__logo-img"
-          src="/images/logo/paseo-logo.png"
-          alt="Terraza Bar Paseo de Las Palmas"
-        />
+        <div className="navbar__logo-text">
+          Terraza <span>Bar</span>
+        </div>
       </a>
 
       <ul className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>

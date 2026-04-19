@@ -1,5 +1,4 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import RevealText from '../components/RevealText';
 import MagneticButton from '../components/MagneticButton';
 import { ClockIcon, MapPinIcon, StarIcon, PhoneIcon } from '../components/Icons';
 
@@ -35,12 +34,30 @@ export default function HeroSection() {
           Punta Cana · República Dominicana
         </motion.span>
 
-        <RevealText tag="h1" className="hero-title" delay={0.2}>
-          Donde el Ambiente
-        </RevealText>
-        <RevealText tag="h1" className="hero-title hero-title--accent" delay={0.35}>
-          Es la Experiencia
-        </RevealText>
+        <motion.h1
+          className="hero-title"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+        >
+          Terraza Bar
+        </motion.h1>
+        <motion.h1
+          className="hero-title hero-title--accent"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+        >
+          & Car Wash
+        </motion.h1>
+        <motion.p
+          className="hero-title hero-title--sub"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9, duration: 0.6 }}
+        >
+          Lava tu carro, disfruta el momento — lo tenemos todo en un solo lugar
+        </motion.p>
 
         <motion.div
           className="hero__line"
@@ -53,16 +70,16 @@ export default function HeroSection() {
           className="hero__subtitle"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 0.6 }}
+          transition={{ delay: 1.3, duration: 0.6 }}
         >
-          Terraza Bar · Car Wash · DJ en Vivo · Karaoke
+          Bar · Car Wash · DJ en Vivo · Karaoke · Cócteles
         </motion.p>
 
         <motion.div
           className="hero__actions"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.6, duration: 0.6 }}
+          transition={{ delay: 1.5, duration: 0.6 }}
         >
           <MagneticButton className="btn-orange" href="tel:8097788888">
             <PhoneIcon size={18} color="white" /> Reservar Mesa
@@ -76,7 +93,7 @@ export default function HeroSection() {
           className="hero__info"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.8, duration: 0.6 }}
+          transition={{ delay: 1.7, duration: 0.6 }}
         >
           <div className="info-item">
             <ClockIcon size={16} color="rgba(255,250,244,0.7)" />

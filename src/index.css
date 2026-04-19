@@ -59,6 +59,7 @@
   --shadow-warm:    0 8px 32px rgba(212,168,83,0.2);
 
   /* Tipografía */
+  --font-display: 'Bebas Neue', Impact, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans:  'DM Sans', system-ui, sans-serif;
   --font-mono:  'DM Mono', monospace;
@@ -134,15 +135,15 @@ a {
 
 /* ========== TYPOGRAPHY ========== */
 .hero-title {
-  font-family: var(--font-serif);
-  font-size: clamp(64px, 10vw, 140px);
-  font-weight: 700;
-  font-style: italic;
-  letter-spacing: -3px;
-  line-height: 0.88;
+  font-family: var(--font-display);
+  font-size: clamp(72px, 12vw, 180px);
+  font-weight: 400;
+  letter-spacing: 4px;
+  line-height: 0.95;
   color: var(--text-white);
   display: block;
-  text-shadow: 0 4px 40px rgba(0,0,0,0.25);
+  text-transform: uppercase;
+  text-shadow: 0 4px 40px rgba(0,0,0,0.2);
 }
 
 .section-title {
@@ -279,6 +280,21 @@ a {
 .navbar__logo-img {
   height: 44px;
   width: auto;
+}
+.navbar__logo-text {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-white);
+  transition: color 0.3s;
+  line-height: 1;
+}
+.navbar__logo-text span {
+  color: var(--orange);
+}
+.navbar--scrolled .navbar__logo-text {
+  color: var(--text);
 }
 .navbar__links {
   display: flex;
@@ -421,8 +437,21 @@ a {
   padding-top: 80px;
 }
 .hero-title--accent {
-  color: var(--gold);
-  text-shadow: 0 4px 40px rgba(212,168,83,0.3);
+  color: var(--orange-bright);
+  text-shadow: 0 4px 40px rgba(232,100,10,0.3);
+  font-size: clamp(80px, 14vw, 200px);
+}
+.hero-title--sub {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2.5vw, 32px);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  text-transform: none;
+  color: rgba(255,250,244,0.85);
+  margin-top: 20px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
 }
 .hero__line {
   height: 2px;
@@ -934,6 +963,17 @@ a {
 .footer__brand-logo {
   height: 48px;
   width: auto;
+}
+.footer__brand-name {
+  font-family: var(--font-display);
+  font-size: 28px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-white);
+  line-height: 1;
+}
+.footer__brand-name span {
+  color: var(--orange);
 }
 .footer__socials {
   display: flex;
