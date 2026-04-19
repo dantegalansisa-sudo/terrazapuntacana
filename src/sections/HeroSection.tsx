@@ -2,14 +2,10 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import MagneticButton from '../components/MagneticButton';
 import { ClockIcon, MapPinIcon, StarIcon, PhoneIcon } from '../components/Icons';
 
-const clientPhotos = [
-  { src: '/images/clients-1.png', alt: 'Clientes disfrutando' },
-  { src: '/images/clients-2.png', alt: 'Motos en Terraza Bar' },
-  { src: '/images/clients-3.png', alt: 'Música en vivo' },
-  { src: '/images/clients-4.png', alt: 'Amigos en la terraza' },
-  { src: '/images/clients-5.png', alt: 'Terraza de día' },
-  { src: '/images/clients-6.png', alt: 'Evento especial' },
-  { src: '/images/clients-7.png', alt: 'Car Wash de noche' },
+const floatingPhotos = [
+  { src: '/images/clients-1.png', alt: 'Clientes disfrutando', cls: 'hero__photo--1' },
+  { src: '/images/clients-3.png', alt: 'Música en vivo', cls: 'hero__photo--2' },
+  { src: '/images/clients-6.png', alt: 'Evento especial', cls: 'hero__photo--3' },
 ];
 
 export default function HeroSection() {
@@ -34,7 +30,6 @@ export default function HeroSection() {
       </div>
 
       <motion.div className="hero__split section-container" style={{ opacity }}>
-        {/* LEFT — Text content */}
         <div className="hero__left">
           <motion.span
             className="label-tag"
@@ -124,30 +119,36 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* RIGHT — Vertical scrolling photo marquee */}
-        <motion.div
-          className="hero__photos"
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.8, duration: 1, ease: [0.76, 0, 0.24, 1] }}
-        >
-          <div className="hero__marquee">
-            <div className="hero__marquee-track">
-              {/* Original set */}
-              {clientPhotos.map((photo, i) => (
-                <div key={`a-${i}`} className="hero__photo">
-                  <img src={photo.src} alt={photo.alt} />
-                </div>
-              ))}
-              {/* Duplicate for seamless loop */}
-              {clientPhotos.map((photo, i) => (
-                <div key={`b-${i}`} className="hero__photo">
-                  <img src={photo.src} alt={photo.alt} />
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
+        {/* RIGHT — 3 floating photos */}
+        <div className="hero__photos">
+          {floatingPhotos.map((photo, i) => (
+            <motion.div
+              key={i}
+              className={`hero__photo ${photo.cls}`}
+              initial={{ opacity: 0, y: 60, scale: 0.8 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                delay: 1.0 + i * 0.25,
+                duration: 0.8,
+                ease: [0.76, 0, 0.24, 1],
+              }}
+            >
+              <motion.img
+                src={photo.src}
+                alt={photo.alt}
+                animate={{
+                  y: [0, i % 2 === 0 ? -10 : 10, 0],
+                  rotate: [0, i % 2 === 0 ? 1 : -1, 0],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 3.5 + i * 0.7,
+                  ease: 'easeInOut',
+                }}
+              />
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
 
       <motion.div
