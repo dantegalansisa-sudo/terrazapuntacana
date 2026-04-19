@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: Terraza Bar & Car Wash Paseo de Las Palmas\n\nReact + TypeScript + Vite + Framer Motion website.\nTropical Night design — cream/orange/green/gold palette.\nAll sections: Hero, Experience, Services, Gallery, Events, Car Wash, Location, Footer.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  }
+}
